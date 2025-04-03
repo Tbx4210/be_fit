@@ -9,7 +9,7 @@ namespace BE_FIT.Models
     
     public class UserModel
     {
-        public string UserId { get; set; } 
+        public string UserId { get; set; }  
         public string Name { get; set; }   
         public string Email { get; set; }   
         public int Age { get; set; }        
