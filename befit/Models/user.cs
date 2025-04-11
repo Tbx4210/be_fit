@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BE_FIT.Models
+namespace befit.Models
 {
     
     public class UserModel

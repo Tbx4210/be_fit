@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using System;
 
-namespace BE_FIT.Models
+namespace befit.Models
 {
     
     public class WorkoutHistoryModel

@@ -22,6 +22,8 @@
         ContentTemplate="{DataTemplate local:ForgotPasswordPage}"
         Route="ForgotPasswordPage" />
 
+    
+
     <!-- Add other routes here as you create more pages -->
 
 </Shell>

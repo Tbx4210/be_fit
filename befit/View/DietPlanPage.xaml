@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="befit.View.DietPlanPage"
+             Title="DietPlanPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="10">
+
+            <Label Text="Meal Name" />
+            <Entry Placeholder="Enter meal name" />
+
+            <Label Text="Meal Type" />
+            <Entry Placeholder="Breakfast/Lunch/Dinner" />
+
+            <Label Text="Calories" />
+            <Entry Placeholder="e.g. 350" Keyboard="Numeric" />
+
+            <Label Text="Protein (g)" />
+            <Entry Placeholder="e.g. 20" Keyboard="Numeric" />
+
+            <Label Text="Carbs (g)" />
+            <Entry Placeholder="e.g. 40" Keyboard="Numeric" />
+
+            <Label Text="Fat (g)" />
+            <Entry Placeholder="e.g. 10" Keyboard="Numeric" />
+
+            <Button Text="Save Meal" BackgroundColor="#FF9800" TextColor="White" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

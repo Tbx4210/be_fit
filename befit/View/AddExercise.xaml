@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="befit.View.AddExercise"
+             Title="AddExercise">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="10">
+
+            <Label Text="Exercise Name" />
+            <Entry Placeholder="Enter exercise name" />
+
+            <Label Text="Sets" />
+            <Entry Placeholder="e.g. 3" Keyboard="Numeric" />
+
+            <Label Text="Reps" />
+            <Entry Placeholder="e.g. 12" Keyboard="Numeric" />
+
+            <Label Text="Duration (minutes)" />
+            <Entry Placeholder="e.g. 30" Keyboard="Numeric" />
+
+            <Label Text="Difficulty" />
+            <Entry Placeholder="Easy/Medium/Hard" />
+
+            <Label Text="Notes" />
+            <Editor Placeholder="Enter notes" HeightRequest="100" />
+
+            <Button Text="Save Exercise" BackgroundColor="#4CAF50" TextColor="White" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

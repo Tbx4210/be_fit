@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="befit.View.UserDetail"
+             Title="UserDetail">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="10">
+
+            <Label Text="Name" />
+            <Entry Placeholder="Enter name" />
+
+            <Label Text="Email" />
+            <Entry Placeholder="Enter email" Keyboard="Email" />
+
+            <Label Text="Age" />
+            <Entry Placeholder="Enter age" Keyboard="Numeric" />
+
+            <Label Text="Gender" />
+            <Entry Placeholder="Male/Female/Other" />
+
+            <Label Text="Weight (kg)" />
+            <Entry Placeholder="Enter weight" Keyboard="Numeric" />
+
+            <Button Text="Save User Info" BackgroundColor="#9C27B0" TextColor="White" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
