@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="befit.RegisterPage"
+             Title="Create Account"
+             BackgroundColor="{DynamicResource PageBackgroundColor}">
+
+    <ScrollView>
+        <VerticalStackLayout 
+            Spacing="25" 
+            Padding="30,0" 
+            VerticalOptions="Center">
+
+            <Image
+                Source="be_fit_logo.png"
+                HeightRequest="160"
+                HorizontalOptions="Center" />
+
+            <Label 
+                Text="Create Account"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label 
+                Text="Start your fitness journey today"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Entry 
+                Placeholder="First Name"
+                Text="{Binding FirstName}"
+                ClearButtonVisibility="WhileEditing" />
+
+            <Entry 
+                Placeholder="Last Name"
+                Text="{Binding LastName}"
+                ClearButtonVisibility="WhileEditing" />
+
+            <Entry 
+                Placeholder="Email"
+                Keyboard="Email"
+                Text="{Binding Email}"
+                ClearButtonVisibility="WhileEditing" />
+
+            <Entry 
+                Placeholder="Password"
+                IsPassword="True"
+                Text="{Binding Password}"
+                ClearButtonVisibility="WhileEditing" />
+
+            <Entry 
+                Placeholder="Confirm Password"
+                IsPassword="True"
+                Text="{Binding ConfirmPassword}"
+                ClearButtonVisibility="WhileEditing" />
+
+            <Button 
+                Text="Register"
+                Command="{Binding RegisterCommand}"
+                HorizontalOptions="Fill"
+                BackgroundColor="#512BD4"
+                TextColor="White" />
+
+            <Label 
+                Text="Already have an account? Sign In"
+                TextColor="#512BD4"
+                HorizontalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GoToLoginCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

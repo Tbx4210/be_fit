@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using befit.ViewModels;
+using Microsoft.Extensions.Logging;
 
 namespace befit
 {
@@ -18,6 +19,16 @@ namespace befit
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
+            // Register pages
+            builder.Services.AddSingleton<AppShell>();
+            builder.Services.AddSingleton<LoginPage>();
+            builder.Services.AddSingleton<RegisterPage>();
+            builder.Services.AddSingleton<ForgotPasswordPage>();
+
+            // Register view models
+            builder.Services.AddSingleton<LoginViewModel>();
+            builder.Services.AddSingleton<RegisterViewModel>();
+            builder.Services.AddSingleton<ForgotPasswordViewModel>();
 
             return builder.Build();
         }

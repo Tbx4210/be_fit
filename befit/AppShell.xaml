@@ -8,8 +8,20 @@
     Title="befit">
 
     <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Title="Login"
+        ContentTemplate="{DataTemplate local:LoginPage}"
+        Route="LoginPage" />
+    
+    <ShellContent
+        Title="Register"
+        ContentTemplate="{DataTemplate local:RegisterPage}"
+        Route="RegisterPage" />
+
+    <ShellContent
+        Title="ForgotPassword"
+        ContentTemplate="{DataTemplate local:ForgotPasswordPage}"
+        Route="ForgotPasswordPage" />
+
+    <!-- Add other routes here as you create more pages -->
 
 </Shell>

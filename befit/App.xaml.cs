@@ -2,14 +2,13 @@
 {
     public partial class App : Application
     {
-        public App()
+        public App(IServiceProvider services)
         {
             InitializeComponent();
+
+            MainPage = new NavigationPage(services.GetRequiredService<LoginPage>());
         }
 
-        protected override Window CreateWindow(IActivationState? activationState)
-        {
-            return new Window(new AppShell());
-        }
+       
     }
 }

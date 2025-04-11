@@ -1,10 +1,17 @@
-﻿namespace befit
+﻿using befit.ViewModels;
+using befit;
+
+namespace befit
 {
-    public partial class AppShell : Shell
+    public partial class App : Application
     {
-        public AppShell()
+        public App()
         {
             InitializeComponent();
+
+            //MainPage = services.GetRequiredService<AppShell>();
+            //MainPage = new NavigationPage(new LoginPage());
+            Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
         }
     }
 }

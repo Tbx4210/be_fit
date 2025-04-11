@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="befit.LoginPage"
+             Title="Login"
+             BackgroundColor="{DynamicResource PageBackgroundColor}">
+
+    <ScrollView>
+        <VerticalStackLayout 
+            Spacing="25" 
+            Padding="30,0" 
+            VerticalOptions="Center">
+
+            <Image
+                Source="be_fit_logo.png"
+                HeightRequest="160"
+                HorizontalOptions="Center" />
+
+            <Label 
+                Text="Welcome to BE FIT"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label 
+                Text="Your personal fitness companion"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Entry 
+                Placeholder="Email"
+                Keyboard="Email"
+                Text="{Binding Email}"
+                ClearButtonVisibility="WhileEditing" />
+
+            <Entry 
+                Placeholder="Password"
+                IsPassword="True"
+                Text="{Binding Password}"
+                ClearButtonVisibility="WhileEditing" />
+
+            <Button 
+                Text="Sign In"
+                Command="{Binding LoginCommand}"
+                HorizontalOptions="Fill"
+                BackgroundColor="#512BD4"
+                TextColor="White" />
+
+            <Button 
+                Text="Create Account"
+                Command="{Binding GoToRegisterCommand}"
+                HorizontalOptions="Fill"
+                BackgroundColor="Transparent"
+                TextColor="#512BD4" />
+
+            <Label 
+                Text="Forgot Password?"
+                TextColor="#512BD4"
+                HorizontalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
