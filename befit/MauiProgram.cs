@@ -21,14 +21,16 @@ namespace befit
 #endif
             // Register pages
             builder.Services.AddSingleton<AppShell>();
-            builder.Services.AddSingleton<LoginPage>();
-            builder.Services.AddSingleton<RegisterPage>();
-            builder.Services.AddSingleton<ForgotPasswordPage>();
+            builder.Services.AddTransient<LoginPage>();
+            builder.Services.AddTransient<RegisterPage>();
+            builder.Services.AddTransient<ForgotPasswordPage>();
+            builder.Services.AddTransient<MainPage>(); 
 
             // Register view models
-            builder.Services.AddSingleton<LoginViewModel>();
-            builder.Services.AddSingleton<RegisterViewModel>();
-            builder.Services.AddSingleton<ForgotPasswordViewModel>();
+            builder.Services.AddTransient<LoginViewModel>();
+            builder.Services.AddTransient<RegisterViewModel>();
+            builder.Services.AddTransient<ForgotPasswordViewModel>();
+            builder.Services.AddTransient<MainPage>(); 
 
             return builder.Build();
         }

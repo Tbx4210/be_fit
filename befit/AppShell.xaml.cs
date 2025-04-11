@@ -3,15 +3,16 @@ using befit;
 
 namespace befit
 {
-    public partial class App : Application
+    public partial class AppShell : Shell
     {
-        public App()
+        public AppShell()
         {
             InitializeComponent();
 
-            //MainPage = services.GetRequiredService<AppShell>();
-            //MainPage = new NavigationPage(new LoginPage());
-            Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
+            Routing.RegisterRoute("LoginPage", typeof(LoginPage));
+            Routing.RegisterRoute("RegisterPage", typeof(RegisterPage));
+            Routing.RegisterRoute("ForgotPasswordPage", typeof(ForgotPasswordPage));
+            Routing.RegisterRoute("MainPage", typeof(MainPage));
         }
     }
 }

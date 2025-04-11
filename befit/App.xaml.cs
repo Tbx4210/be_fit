@@ -2,13 +2,21 @@
 {
     public partial class App : Application
     {
-        public App(IServiceProvider services)
+        public App()
         {
-            InitializeComponent();
+            //try
+            //{
+                InitializeComponent();
 
-            MainPage = new NavigationPage(services.GetRequiredService<LoginPage>());
+                MainPage = new AppShell();
         }
 
-       
+            //catch (Exception ex)
+            //{
+            //    System.Diagnostics.Debug.WriteLine($"App initialization failed: {ex}");
+            //    throw; // This will help you see the exact error
+            //}
+
+        
     }
 }

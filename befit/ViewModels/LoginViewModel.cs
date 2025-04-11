@@ -73,11 +73,30 @@ public class LoginViewModel : INotifyPropertyChanged
 
     public LoginViewModel()
     {
-        LoginCommand = new Command(async () => await LoginAsync(),
-            () => !IsBusy && EmailIsValid && PasswordIsValid);
+        LoginCommand = new Command(async () => 
+            await LoginAsync(),
+                () => !IsBusy && EmailIsValid && PasswordIsValid);
+
+
 
         GoToRegisterCommand = new Command(async () =>
-            await Shell.Current.GoToAsync(nameof(RegisterPage)));
+        {
+            try
+            {
+                await Shell.Current.GoToAsync("//RegisterPage");
+            }
+            catch (Exception ex)
+            {
+                // Handle navigation errors
+                await Application.Current.MainPage.DisplayAlert(
+                    "Navigation Error",
+                    $"Couldn't navigate to Register: {ex.Message}",
+                    "OK");
+
+                // For debugging (optional)
+                System.Diagnostics.Debug.WriteLine($"NAVIGATION ERROR: {ex}");
+            }
+        });
     }
 
     private async Task LoginAsync()
