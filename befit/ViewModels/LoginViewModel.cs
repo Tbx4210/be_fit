@@ -73,10 +73,10 @@ public class LoginViewModel : INotifyPropertyChanged
 
     public LoginViewModel()
     {
-        LoginCommand = new Command(async () => 
-            await LoginAsync(),
-                () => !IsBusy && EmailIsValid && PasswordIsValid);
-
+        LoginCommand = new Command(async () =>
+        {
+            await Shell.Current.GoToAsync("//MainPage"); // Force navigation
+        });
 
 
         GoToRegisterCommand = new Command(async () =>
@@ -106,7 +106,10 @@ public class LoginViewModel : INotifyPropertyChanged
             IsBusy = true;
 
             // Simulate network call
-            await Task.Delay(1500);
+           // await Task.Delay(1500);
+            //force-navigation
+            await Shell.Current.GoToAsync("//MainPage",animate:true);
+
 
             if (/* Your auth success check */ true)
             {

@@ -30,6 +30,7 @@ namespace befit
             builder.Services.AddTransient<LoginViewModel>();
             builder.Services.AddTransient<RegisterViewModel>();
             builder.Services.AddTransient<ForgotPasswordViewModel>();
+            builder.Services.AddTransient<MainViewModel>();
             builder.Services.AddTransient<MainPage>(); 
 
             return builder.Build();

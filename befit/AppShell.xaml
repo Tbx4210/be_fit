@@ -9,7 +9,12 @@
     <ShellContent
         Title="Login"
         ContentTemplate="{DataTemplate local:LoginPage}"
-        Route="LoginPage" />
+        Route="LoginPage" /> 
+    
+    <ShellContent
+    Title="Main"
+    ContentTemplate="{DataTemplate local:MainPage}"
+    Route="MainPage" />
     
     <ShellContent
         Title="Register"
@@ -21,10 +26,7 @@
         ContentTemplate="{DataTemplate local:ForgotPasswordPage}"
         Route="ForgotPasswordPage" />
 
-    <ShellContent
-    Title="Main"
-    ContentTemplate="{DataTemplate local:MainPage}"
-    Route="MainPage" />
+   
 
     <!-- Add other routes here as you create more pages -->
 

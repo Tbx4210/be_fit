@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using befit; 
 
 
-namespace BE_FIT.Models
+namespace befit.Models
 {
     
     public class ExerciseRoutineModel

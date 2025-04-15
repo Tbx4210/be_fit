@@ -4,16 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BE_FIT.Models
+namespace befit.Models
 {
     
     public class UserModel
     {
-        public string UserId { get; set; }  
-        public string Name { get; set; }   
-        public string Email { get; set; }   
-        public int Age { get; set; }        
-        public string Gender { get; set; }  
-        public double Weight { get; set; }
+        public string Name { get; set; }
+        public int Age { get; set; }
+        public double Weight { get; set; } // in kg
+        public double Height { get; set; } // in cm
+        public string FitnessGoal { get; set; }
     }
 }
