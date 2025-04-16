@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using befit.Models;
 
 namespace befit.ViewModels
@@ -22,6 +23,17 @@ namespace befit.ViewModels
                 OnPropertyChanged(nameof(CurrentUser));
             }
         }
+
+        private ExerciseViewModel _exerciseVM;  // Note: _exerciseVM
+public ExerciseViewModel ExerciseVM    // Note: ExerciseVM (public property)
+{
+    get => _exerciseVM;
+    set
+    {
+        _exerciseVM = value;
+        OnPropertyChanged(nameof(ExerciseVM));
+    }
+}
 
         // Today's Workouts
         private ObservableCollection<ExerciseRoutineModel> _todaysWorkouts;
@@ -59,10 +71,28 @@ namespace befit.ViewModels
             }
         }
 
-        public MainViewModel()
-        {
+        // Commands
+        public ICommand GoToCreateExerciseCommand { get; }
+        public ICommand RefreshCommand { get; }
+
+        public MainViewModel()        {
+            //ExerciseVM = exerciseViewModel;
             LoadSampleData();
+
+            GoToCreateExerciseCommand = new Command(async () =>
+            {
+                await Shell.Current.GoToAsync("//CreateExercisePage");
+            });
+
+            RefreshCommand = new Command(() =>
+            {
+                LoadSampleData();
+                OnPropertyChanged(nameof(TodaysWorkouts));
+                OnPropertyChanged(nameof(TodaysMeals));
+            });
         }
+
+        
 
         private void LoadSampleData()
         {

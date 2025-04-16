@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="befit.CreateExercisePage"
+             xmlns:viewmodel="clr-namespace:befit.ViewModels"
+             x:DataType="viewmodel:ExerciseViewModel"
+             Title="Create Exercise"
+             BackgroundColor="#F5F5F5">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <!-- Header -->
+            <Label Text="Create New Exercise"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,10"/>
+
+            <!-- Exercise Name -->
+            <Frame CornerRadius="10" Padding="15" HasShadow="False" BackgroundColor="White">
+                <Entry Placeholder="Exercise Name" 
+                       Text="{Binding NewExercise.ExerciseName}"
+                       ClearButtonVisibility="WhileEditing"/>
+            </Frame>
+
+            <!-- Muscle Group Picker -->
+            <Label Text="Muscle Group" FontSize="16" TextColor="#666666"/>
+            <Frame CornerRadius="10" Padding="0" HasShadow="False" BackgroundColor="White">
+                <Picker Title="Select Muscle Group"
+                        ItemsSource="{Binding MuscleGroups}"
+                        SelectedItem="{Binding NewExercise.MuscleGroup}"
+                        FontSize="16">
+                    <!-- Padding="15"> -->
+                    <Picker.Items>
+                        <x:String>Chest</x:String>
+                        <x:String>Back</x:String>
+                        <x:String>Legs</x:String>
+                        <x:String>Arms</x:String>
+                        <x:String>Core</x:String>
+                        <x:String>Full Body</x:String>
+                    </Picker.Items>
+                </Picker>
+            </Frame>
+
+            <!-- Sets and Reps -->
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="15">
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="Sets" FontSize="16" TextColor="#666666"/>
+                    <Frame CornerRadius="10" Padding="15" HasShadow="False" BackgroundColor="White">
+                        <Entry Keyboard="Numeric"
+                               Text="{Binding NewExercise.Sets}"
+                               Placeholder="3"
+                               HorizontalTextAlignment="Center"/>
+                    </Frame>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Spacing="5" Grid.Column="1">
+                    <Label Text="Reps" FontSize="16" TextColor="#666666"/>
+                    <Frame CornerRadius="10" Padding="15" HasShadow="False" BackgroundColor="White">
+                        <Entry Keyboard="Numeric"
+                               Text="{Binding NewExercise.Reps}"
+                               Placeholder="12"
+                               HorizontalTextAlignment="Center"/>
+                    </Frame>
+                </VerticalStackLayout>
+            </Grid>
+
+            <!-- Difficulty Picker -->
+            <Label Text="Difficulty Level" FontSize="16" TextColor="#666666"/>
+            <Frame CornerRadius="10" Padding="0" HasShadow="False" BackgroundColor="White">
+                <Picker Title="Select Difficulty"
+                        ItemsSource="{Binding DifficultyLevels}"
+                        SelectedItem="{Binding NewExercise.Difficulty}"
+                        FontSize="16">
+                    <!-- Padding="15"> -->
+                    <Picker.Items>
+                        <x:String>Beginner</x:String>
+                        <x:String>Intermediate</x:String>
+                        <x:String>Advanced</x:String>
+                    </Picker.Items>
+                </Picker>
+            </Frame>
+
+            <!-- Save Button -->
+            <Button Text="SAVE EXERCISE"
+                    Command="{Binding SaveExerciseCommand}"
+                    BackgroundColor="#512BD4"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="10"
+                    HeightRequest="50"
+                    Margin="0,20"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

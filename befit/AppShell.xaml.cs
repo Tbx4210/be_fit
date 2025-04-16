@@ -13,6 +13,7 @@ namespace befit
             Routing.RegisterRoute("MainPage", typeof(MainPage));
             Routing.RegisterRoute("RegisterPage", typeof(RegisterPage));
             Routing.RegisterRoute("ForgotPasswordPage", typeof(ForgotPasswordPage));
+            Routing.RegisterRoute("CreateExercisePage", typeof(CreateExercisePage));
         }
     }
 }

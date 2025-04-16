@@ -3,6 +3,8 @@
              x:Class="befit.MainPage"
              xmlns:model="clr-namespace:befit.Models"
              Title="Dashboard"
+             xmlns:viewmodels="clr-namespace:befit.ViewModels"
+             x:DataType="viewmodels:MainViewModel"
              BackgroundColor="#F5F5F5">
 
     <ScrollView>
@@ -28,6 +30,17 @@
                     </Grid>
                 </VerticalStackLayout>
             </Frame>
+
+            <!-- Exercise Management Button -->
+            <Button Text="CREATE NEW EXERCISE" 
+                    Command="{Binding GoToCreateExerciseCommand}"
+                    BackgroundColor="#512BD4"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="10"
+                    HeightRequest="50"/>
+
+
 
             <!-- Today's Workouts Section -->
             <Frame CornerRadius="15" Padding="0" HasShadow="True">
